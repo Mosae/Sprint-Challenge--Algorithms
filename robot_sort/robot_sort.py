@@ -99,16 +99,17 @@ class SortingRobot:
         self.set_light_on()
 
         # whn the light is on begin move
-        while self.set_light_on():
+        while self.light_is_on():
             # set the light off to move
             self.set_light_off()
 
         # if robot can move right move right
             while self.can_move_right():
+                # go up the list
                 self.move_right()
                 # compare two items
                 if self.compare_item() == 1:
-                    # swap the item
+                    # swap the item because the held 1 is greater
                     self.swap_item()
                     # indicate the move is over
                     self.set_light_on()
